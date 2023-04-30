@@ -1,0 +1,43 @@
+@use "./styles/variables" as v;
+@use "./styles//mixins" as m;
+
+.panel {
+  $spacing: 125px;
+  height: calc(100vh - $spacing);
+  width: calc(100vw - $spacing);
+  border: 2px solid v.$font-color;
+  border-radius: 15px;
+  background: v.$dashboard-bg;
+  backdrop-filter: blur(5px);
+
+  display: grid;
+  grid-template-areas:
+    "title search"
+    "nav main";
+  grid-template-rows: 100px 1fr;
+  grid-template-columns: 300px 1fr;
+
+  .title {
+    display: grid;
+    place-items: center;
+    grid-area: title;
+    font-size: 2em;
+    font-weight: bold;
+  }
+  .searchbar {
+    grid-area: search;
+  }
+  nav {
+    grid-area: nav;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  main {
+    grid-area: main;
+    background: v.$main-bg;
+    backdrop-filter: blur(5px);
+    margin: 0 25px 25px 0;
+    border-radius: 10px;
+  }
+}
