@@ -1,6 +1,5 @@
 import styles from "./App.module.scss";
-import Navbar from "./features/ui/Navbar/Navbar";
-import Searchbar from "./features/ui/Searchbar/Searchbar";
+import { CardGrid, Navbar, Searchbar } from "./features";
 
 function App() {
   return (
@@ -10,7 +9,7 @@ function App() {
       </div>
       <Navbar />
       <Searchbar />
-      <main>main</main>
+      <CardGrid />
     </div>
   );
 }
