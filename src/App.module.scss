@@ -5,6 +5,7 @@
   $spacing: 125px;
   height: calc(100vh - $spacing);
   width: calc(100vw - $spacing);
+  max-width: 1300px;
   border: 2px solid v.$font-color;
   border-radius: 15px;
   background: v.$dashboard-bg;
@@ -23,15 +24,6 @@
     grid-area: title;
     font-size: 2em;
     font-weight: bold;
-  }
-  .searchbar {
-    grid-area: search;
-  }
-  nav {
-    grid-area: nav;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
   main {
     grid-area: main;

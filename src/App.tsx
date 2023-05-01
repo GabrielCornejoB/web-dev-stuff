@@ -1,4 +1,6 @@
 import styles from "./App.module.scss";
+import Navbar from "./features/ui/Navbar/Navbar";
+import Searchbar from "./features/ui/Searchbar/Searchbar";
 
 function App() {
   return (
@@ -6,8 +8,8 @@ function App() {
       <div className={styles.title}>
         <h1>WebDevStuff</h1>
       </div>
-      <nav>nav</nav>
-      <div className={styles.searchbar}>search</div>
+      <Navbar />
+      <Searchbar />
       <main>main</main>
     </div>
   );
