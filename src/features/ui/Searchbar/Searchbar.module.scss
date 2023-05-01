@@ -7,11 +7,11 @@
   @include m.flex(row, space-between);
   .searchInput {
     @include m.flex(row, space-between);
-    background: v.$navitems-bg;
+    background: v.$item-bg;
     height: 45px;
     width: 350px;
     border-radius: 10px;
-    opacity: 50%;
+    transition: 0.3s;
     .searchIcon {
       width: 15%;
     }
@@ -19,23 +19,23 @@
       width: 85%;
     }
     &:hover {
-      opacity: 100%;
+      color: v.$title-color;
     }
   }
   .toggleTheme {
     @include m.flex(row);
     cursor: pointer;
-    background: v.$navitems-bg;
-    opacity: 50%;
+    background: v.$item-bg;
     border-radius: 10px;
     gap: 15px;
     width: 160px;
     height: 45px;
+    transition: 0.3s;
     span::selection {
       background: none;
     }
     &:hover {
-      opacity: 100%;
+      color: v.$title-color;
     }
   }
 }

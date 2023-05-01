@@ -15,8 +15,7 @@ $separation: 25px;
 
 .navItem {
   @include m.flex(row, flex-start);
-  color: v.$font-color;
-  opacity: 50%;
+  color: v.$text-color;
   font-size: 1.5em;
   gap: 15px;
   margin-bottom: 10px;
@@ -24,11 +23,13 @@ $separation: 25px;
   padding: 10px 15px;
   border-radius: 10px;
   cursor: pointer;
+  transition: 0.3s;
   &:last-child {
     margin-bottom: 0;
   }
   &:hover {
-    background: v.$dark-purple;
+    background: v.$button-bg;
     opacity: 100%;
+    color: v.$title-color;
   }
 }
