@@ -1,56 +1,21 @@
+import { Card } from "..";
 import s from "./CardGrid.module.scss";
 
 function CardGrid() {
+  const data = [1, 2, 4, 5];
+
+  const handleGridSpaces = () => {
+    const count = 9 - data.length;
+    return [...Array(count).keys()];
+  };
+
   return (
     <main className={s.grid}>
-      <div className={s.cartica}>
-        <h3>1</h3>
-      </div>
-      <div className={s.cartica}>
-        <h3>2</h3>
-      </div>
-      <div className={s.cartica}>
-        <h3>3</h3>
-      </div>
-      <div className={s.cartica}>
-        <h3>4</h3>
-      </div>
-      <div className={s.cartica}>
-        <h3>5</h3>
-      </div>
-      <div className={s.cartica}>
-        <h3>6</h3>
-      </div>
-      <div className={s.cartica}>
-        <h3>7</h3>
-      </div>
-      <div className={s.cartica}>
-        <h3>8</h3>
-      </div>
-      <div className={s.cartica}>
-        <h3>1</h3>
-      </div>
-      <div className={s.cartica}>
-        <h3>2</h3>
-      </div>
-      <div className={s.cartica}>
-        <h3>3</h3>
-      </div>
-      <div className={s.cartica}>
-        <h3>4</h3>
-      </div>
-      <div className={s.cartica}>
-        <h3>5</h3>
-      </div>
-      <div className={s.cartica}>
-        <h3>6</h3>
-      </div>
-      <div className={s.cartica}>
-        <h3>7</h3>
-      </div>
-      <div className={s.cartica}>
-        <h3>8</h3>
-      </div>
+      {data.map((c, index) => (
+        <Card key={index} description="c" />
+      ))}
+      {data.length < 9 &&
+        handleGridSpaces().map((index) => <span key={index}></span>)}
     </main>
   );
 }

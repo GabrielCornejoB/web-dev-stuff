@@ -1,0 +1,16 @@
+@use "../../../styles/variables" as v;
+@use "../../../styles/mixins" as m;
+
+.card {
+  @include m.flex(column);
+  background: v.$card-bg;
+  border-radius: 10px;
+  color: v.$title-color;
+  padding: 7.5px;
+  gap: 20px;
+  aspect-ratio: 1;
+  img {
+    width: 50%;
+    border-radius: 20px;
+  }
+}
