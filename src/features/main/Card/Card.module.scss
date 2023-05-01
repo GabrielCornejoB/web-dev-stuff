@@ -9,8 +9,13 @@
   padding: 7.5px;
   gap: 20px;
   aspect-ratio: 1;
+  cursor: pointer;
+  transition: 0.3s;
   img {
     width: 50%;
     border-radius: 20px;
+  }
+  &:hover {
+    background: v.$text-color;
   }
 }
