@@ -1,5 +1,4 @@
 import s from "./Card.module.scss";
-import img from "../../../assets/google.webp";
 import Link from "../CardGrid/Link";
 
 interface Props {
@@ -9,7 +8,7 @@ interface Props {
 function Card({ link }: Props) {
   return (
     <a href={link.url} target="_blank" className={s.card}>
-      <img src={img} alt="" />
+      <img src={link.image_url} alt={link.page_name} />
       <h3>{link.page_name}</h3>
     </a>
   );
