@@ -1,38 +1,28 @@
-import { useState, useEffect } from "react";
-import { getDocs, collection } from "firebase/firestore";
-import { db } from "../../../config/firebase";
 import { Card } from "..";
 import s from "./CardGrid.module.scss";
-import Link from "./Link";
+import useLinks from "../useLinks";
 
 function CardGrid() {
-  const [links, setLinks] = useState<Link[]>([]);
-  const collectionRef = collection(db, "links");
-  useEffect(() => {
-    getLinks();
-  }, []);
-
-  const getLinks = async () => {
-    const data = await getDocs(collectionRef);
-    const docs = data.docs.map((doc) => ({
-      ...doc.data(),
-      id: doc.id,
-    }));
-    // console.log(docs);
-    setLinks(docs as Link[]);
-  };
+  const { data: links, isLoading, error } = useLinks();
 
   const handleGridSpaces = () => {
-    const count = 9 - links.length;
-    return [...Array(count).keys()];
+    if (links !== undefined) {
+      const count = 9 - links.length;
+      return [...Array(count).keys()];
+    }
+    return [];
   };
+
+  if (isLoading) return <p>Loading</p>;
+  if (error) return <p>error</p>;
   return (
     <main className={s.grid}>
-      {links.map((l) => (
+      {links?.map((l) => (
         <Card key={l.id} link={l} />
       ))}
-      {links.length < 9 &&
-        handleGridSpaces().map((index) => <span key={index}></span>)}
+      {links !== undefined && links.length < 9
+        ? handleGridSpaces().map((index) => <span key={index}></span>)
+        : null}
     </main>
   );
 }

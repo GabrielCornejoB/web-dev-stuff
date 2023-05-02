@@ -1,5 +1,5 @@
 import s from "./Card.module.scss";
-import Link from "../CardGrid/Link";
+import Link from "../Link";
 
 interface Props {
   link: Link;

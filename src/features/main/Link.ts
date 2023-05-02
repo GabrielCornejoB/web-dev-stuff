@@ -8,7 +8,8 @@ export type Category =
   | "sections"
   | "js_libraries"
   | "react_tools"
-  | "react_libraries";
+  | "react_libraries"
+  | "other_tools";
 
 export default interface Link {
   id: string;
