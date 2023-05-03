@@ -1,21 +1,45 @@
 @use "../../../styles/variables" as v;
 @use "../../../styles/mixins" as m;
 
-.card {
+.cardContainer {
   @include m.flex(column);
+  gap: 20px;
   background: v.$card-bg;
   border-radius: 10px;
-  color: v.$title-color;
   padding: 7.5px;
-  gap: 20px;
   aspect-ratio: 1;
-  cursor: pointer;
-  transition: 0.3s;
-  img {
-    width: 50%;
-    border-radius: 20px;
+
+  &.card {
+    color: v.$title-color;
+    cursor: pointer;
+    transition: 0.3s;
+    img {
+      width: 50%;
+      border-radius: 20px;
+    }
+    &:hover {
+      background: v.$text-color;
+    }
   }
-  &:hover {
-    background: v.$text-color;
+  &.skeleton {
+    animation: skeleton-loading 1s linear infinite alternate;
+    .imagePlaceholder,
+    .textPlaceholder {
+      background: v.$card-bg;
+      border-radius: 20px;
+    }
+    .imagePlaceholder {
+      width: 50%;
+      aspect-ratio: 1;
+    }
+    .textPlaceholder {
+      height: 10%;
+      width: 70%;
+    }
+  }
+}
+@keyframes skeleton-loading {
+  50% {
+    opacity: 50%;
   }
 }

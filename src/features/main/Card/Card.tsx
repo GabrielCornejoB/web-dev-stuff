@@ -7,7 +7,11 @@ interface Props {
 
 function Card({ link }: Props) {
   return (
-    <a href={link.url} target="_blank" className={s.card}>
+    <a
+      href={link.url}
+      target="_blank"
+      className={`${s.cardContainer} ${s.card}`}
+    >
       <img src={link.image_url} alt={link.page_name} />
       <h3>{link.page_name}</h3>
     </a>
