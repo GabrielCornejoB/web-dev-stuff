@@ -1,19 +1,16 @@
 import s from "./Card.module.scss";
-import Link from "../Link";
 
 interface Props {
-  link: Link;
+  name: string;
+  url: string;
+  imageUrl: string;
 }
 
-function Card({ link }: Props) {
+function Card({ name, url, imageUrl }: Props) {
   return (
-    <a
-      href={link.url}
-      target="_blank"
-      className={`${s.cardContainer} ${s.card}`}
-    >
-      <img src={link.image_url} alt={link.page_name} />
-      <h3>{link.page_name}</h3>
+    <a href={url} target="_blank" className={`${s.cardContainer} ${s.card}`}>
+      <img src={imageUrl} alt={name} />
+      <h3>{name}</h3>
     </a>
   );
 }

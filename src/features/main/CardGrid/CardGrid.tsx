@@ -1,14 +1,14 @@
-import { Card } from "..";
-import s from "./CardGrid.module.scss";
 import useLinks from "../useLinks";
+import { Card } from "..";
 import CardSkeleton from "../Card/CardSkeleton";
+import s from "./CardGrid.module.scss";
 
 function CardGrid() {
-  const { data: links, isLoading, error } = useLinks();
+  const { data: links, error, isLoading } = useLinks();
   const skeletons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
   const handleGridSpaces = () => {
-    if (links !== undefined) {
+    if (links) {
       const count = 9 - links.length;
       return [...Array(count).keys()];
     }
@@ -21,9 +21,14 @@ function CardGrid() {
       {isLoading &&
         skeletons.map((skeleton) => <CardSkeleton key={skeleton} />)}
       {links?.map((l) => (
-        <Card key={l.id} link={l} />
+        <Card
+          key={l.id}
+          name={l.page_name}
+          url={l.url}
+          imageUrl={l.image_url}
+        />
       ))}
-      {links !== undefined && links.length < 9
+      {links && links.length < 9
         ? handleGridSpaces().map((index) => <span key={index}></span>)
         : null}
     </main>

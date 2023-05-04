@@ -15,6 +15,6 @@ export default interface Link {
   id: string;
   page_name: string;
   url: string;
-  category: Category;
+  // category: Category;
   image_url?: string;
 }
