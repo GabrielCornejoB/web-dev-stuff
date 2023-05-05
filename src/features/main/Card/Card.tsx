@@ -16,7 +16,6 @@ function Card({ link }: Props) {
       className={`${s.cardContainer} ${s.card}`}
       onContextMenu={(e) => e.preventDefault()}
       onAuxClick={() => setIsInitial(!isInitial)}
-      title="Click to open, Right click to show more info"
     >
       {isInitial ? (
         <>
@@ -29,7 +28,15 @@ function Card({ link }: Props) {
           <h3>{link.page_name}</h3>
         </>
       ) : (
-        <p>hola mundo</p>
+        <div className={s.content}>
+          <div className={s.categories}>
+            <span>
+              {link.requiresLogin ? "Login required" : "No login required"}
+            </span>
+            <span>{link.isFreemium ? "Freemium" : "Fully Free"}</span>
+          </div>
+          <p>{link.description}</p>
+        </div>
       )}
     </a>
   );

@@ -19,6 +19,23 @@
     &:hover {
       background: v.$text-color;
     }
+    .content {
+      @include m.flex(column, flex-start);
+      padding: 7.5px;
+      gap: 15px;
+      height: 100%;
+      width: 100%;
+      .categories {
+        @include m.flex(row, space-between);
+        font-size: 0.75rem;
+        width: 100%;
+        span {
+          background: v.$card-bg;
+          padding: 5px;
+          border-radius: 5px;
+        }
+      }
+    }
   }
   &.skeleton {
     animation: skeleton-loading 1s linear infinite alternate;
