@@ -20,13 +20,8 @@ function CardGrid() {
     <main className={s.grid}>
       {isLoading &&
         skeletons.map((skeleton) => <CardSkeleton key={skeleton} />)}
-      {links?.map((l) => (
-        <Card
-          key={l.id}
-          name={l.page_name}
-          url={l.url}
-          imageUrl={l.image_url}
-        />
+      {links?.map((link) => (
+        <Card key={link.id} link={link} />
       ))}
       {links && links.length < 9
         ? handleGridSpaces().map((index) => <span key={index}></span>)
