@@ -3,8 +3,8 @@
 
 $separation: 25px;
 
-.nav {
-  grid-area: nav;
+.aside {
+  grid-area: aside;
   padding: $separation $separation 0 $separation;
   margin-bottom: $separation;
   ul {
@@ -18,7 +18,7 @@ $separation: 25px;
   }
 }
 
-.navItem {
+.asideItem {
   @include m.flex(row, flex-start);
   color: v.$text-color;
   font-size: 1.5em;

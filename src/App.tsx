@@ -1,13 +1,13 @@
 import styles from "./App.module.scss";
-import { CardGrid, Navbar, Searchbar } from "./features";
+import { CardGrid, AsideBar, Searchbar } from "./features";
 
 function App() {
   return (
     <div className={styles.panel}>
       <div className={styles.title}>
-        <h1>WebDevStuff</h1>
+        <h1>Web Dev Stuff</h1>
       </div>
-      <Navbar />
+      <AsideBar />
       <Searchbar />
       <CardGrid />
     </div>

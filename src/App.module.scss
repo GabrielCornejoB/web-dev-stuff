@@ -14,7 +14,7 @@
   display: grid;
   grid-template-areas:
     "title search"
-    "nav main";
+    "aside main";
   grid-template-rows: 100px 1fr;
   grid-template-columns: 300px 1fr;
 
@@ -25,5 +25,13 @@
     font-size: 2em;
     font-weight: bold;
     color: v.$title-color;
+    font-family: "Pacifico", cursive;
+    h1 {
+      cursor: pointer;
+      transition: 0.3s;
+      &:hover {
+        color: v.$text-color;
+      }
+    }
   }
 }

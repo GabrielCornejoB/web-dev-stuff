@@ -1,2 +1,2 @@
-export { default as Navbar } from "./Navbar/Navbar";
+export { default as AsideBar } from "./AsideBar/AsideBar";
 export { default as Searchbar } from "./Searchbar/Searchbar";
