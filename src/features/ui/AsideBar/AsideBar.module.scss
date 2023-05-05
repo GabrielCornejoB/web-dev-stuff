@@ -2,19 +2,25 @@
 @use "../../../styles/mixins" as m;
 
 $separation: 25px;
+$scrollbar: 10px;
 
 .aside {
   grid-area: aside;
-  padding: $separation $separation 0 $separation;
+  padding: $separation 0 0 $separation;
   margin-bottom: $separation;
+  margin-right: calc($separation - $scrollbar);
   ul {
     @include m.flex(column, flex-start, flex-start);
   }
   overflow-y: scroll;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
   &::-webkit-scrollbar {
-    display: none;
+    width: $scrollbar;
+    background-color: transparent;
+    border-radius: 50px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: v.$board-bg;
+    border-radius: 50px;
   }
 }
 
