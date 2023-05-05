@@ -12,3 +12,10 @@ body {
   background-color: v.$text-color;
   color: v.$title-color;
 }
+::placeholder {
+  color: v.$text-color;
+  opacity: 1;
+}
+::-ms-input-placeholder {
+  color: v.$text-color;
+}

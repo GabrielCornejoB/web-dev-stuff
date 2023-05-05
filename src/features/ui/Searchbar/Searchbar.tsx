@@ -24,7 +24,7 @@ function Searchbar() {
       <IconContext.Provider value={{ size: "25px" }}>
         <div className={s.searchInput}>
           <BiSearch className={s.searchIcon} />
-          <input />
+          <input placeholder="this doesn't works yet c:" />
         </div>
         <div className={s.toggleTheme} onClick={handleClick}>
           <GoPaintcan />
