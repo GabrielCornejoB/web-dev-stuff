@@ -35,7 +35,11 @@ function Card({ link }: Props) {
             </span>
             <span>{link.isFreemium ? "Freemium" : "Fully Free"}</span>
           </div>
-          <p>{link.description}</p>
+          <p>
+            {link.description
+              ? link.description
+              : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam quidem nihil nesciunt quia quasi perspiciatis!"}
+          </p>
         </div>
       )}
     </a>
