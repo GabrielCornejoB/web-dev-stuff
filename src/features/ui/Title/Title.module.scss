@@ -12,7 +12,7 @@
     cursor: pointer;
     transition: 0.3s;
     &:hover {
-      color: v.$text-color;
+      opacity: 0.5;
     }
   }
 }
