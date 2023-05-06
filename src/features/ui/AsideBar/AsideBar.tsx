@@ -18,6 +18,7 @@ interface AsideItemProps {
   children: ReactNode;
   category: string;
   categoryId: number;
+  isActive: boolean;
   handleClick: (id: number) => void;
 }
 
@@ -26,9 +27,13 @@ function AsideItem({
   category,
   categoryId,
   handleClick,
+  isActive,
 }: AsideItemProps) {
   return (
-    <li className={s.asideItem} onClick={() => handleClick(categoryId)}>
+    <li
+      className={`${s.asideItem} ${isActive && s.active}`}
+      onClick={() => handleClick(categoryId)}
+    >
       {children} <span>{category}</span>
     </li>
   );
@@ -36,6 +41,7 @@ function AsideItem({
 
 function AsideBar() {
   const setCategoryId = useQueryStore((s) => s.setCategoryId);
+  const selectedCategory = useQueryStore((s) => s.linkQuery.categoryId);
 
   const handleClick = (categoryId: number) => {
     setCategoryId(categoryId);
@@ -45,13 +51,19 @@ function AsideBar() {
     <aside className={s.aside}>
       <IconContext.Provider value={{ size: "30px" }}>
         <ul>
-          <AsideItem category="Icons" categoryId={1} handleClick={handleClick}>
+          <AsideItem
+            category="Icons"
+            categoryId={1}
+            handleClick={handleClick}
+            isActive={selectedCategory == 1}
+          >
             <FaIcons />
           </AsideItem>
           <AsideItem
             category="CSS Generators"
             categoryId={2}
             handleClick={handleClick}
+            isActive={selectedCategory == 2}
           >
             <DiCss3 />
           </AsideItem>
@@ -59,6 +71,7 @@ function AsideBar() {
             category="Illustrations"
             categoryId={3}
             handleClick={handleClick}
+            isActive={selectedCategory == 3}
           >
             <BsVectorPen />
           </AsideItem>
@@ -66,6 +79,7 @@ function AsideBar() {
             category="Color Gradients"
             categoryId={5}
             handleClick={handleClick}
+            isActive={selectedCategory == 5}
           >
             <MdGradient />
           </AsideItem>
@@ -73,6 +87,7 @@ function AsideBar() {
             category="Color Palettes"
             categoryId={6}
             handleClick={handleClick}
+            isActive={selectedCategory == 6}
           >
             <MdColorLens />
           </AsideItem>
@@ -80,6 +95,7 @@ function AsideBar() {
             category="Sections"
             categoryId={7}
             handleClick={handleClick}
+            isActive={selectedCategory == 7}
           >
             <MdOutlineWeb />
           </AsideItem>
@@ -87,6 +103,7 @@ function AsideBar() {
             category="Libraries"
             categoryId={8}
             handleClick={handleClick}
+            isActive={selectedCategory == 8}
           >
             <MdLibraryAdd />
           </AsideItem>
@@ -94,6 +111,7 @@ function AsideBar() {
             category="React Libraries"
             categoryId={9}
             handleClick={handleClick}
+            isActive={selectedCategory == 9}
           >
             <FaReact />
           </AsideItem>
@@ -101,6 +119,7 @@ function AsideBar() {
             category="Other Tools"
             categoryId={10}
             handleClick={handleClick}
+            isActive={selectedCategory == 10}
           >
             <FaToolbox />
           </AsideItem>

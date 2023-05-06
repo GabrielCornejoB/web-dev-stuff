@@ -43,4 +43,7 @@ $scrollbar: 10px;
     opacity: 100%;
     color: v.$title-color;
   }
+  &.active {
+    color: v.$title-color;
+  }
 }
