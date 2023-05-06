@@ -23,27 +23,3 @@ $scrollbar: 10px;
     border-radius: 50px;
   }
 }
-
-.asideItem {
-  @include m.flex(row, flex-start);
-  color: v.$text-color;
-  font-size: 1.5em;
-  gap: 15px;
-  margin-bottom: 10px;
-  width: 100%;
-  padding: 10px 15px;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: 0.3s;
-  &:last-child {
-    margin-bottom: 0;
-  }
-  &:hover {
-    background: v.$button-bg;
-    opacity: 100%;
-    color: v.$title-color;
-  }
-  &.active {
-    color: v.$title-color;
-  }
-}
