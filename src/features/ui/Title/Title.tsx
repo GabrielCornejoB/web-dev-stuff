@@ -2,11 +2,11 @@ import useQueryStore from "../../../store";
 import s from "./Title.module.scss";
 
 function Title() {
-  const setCategoryId = useQueryStore((s) => s.setCategoryId);
+  const resetQuery = useQueryStore((s) => s.resetQuery);
 
   return (
     <div className={s.title}>
-      <h1 onClick={() => setCategoryId(undefined)}>Web Dev Stuff</h1>
+      <h1 onClick={resetQuery}>Web Dev Stuff</h1>
     </div>
   );
 }
