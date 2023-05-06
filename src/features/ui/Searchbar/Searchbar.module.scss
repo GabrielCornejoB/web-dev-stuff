@@ -3,20 +3,20 @@
 
 .searchbar {
   grid-area: search;
-  padding-right: 25px;
+  padding: 15px 25px;
   @include m.flex(row, space-between);
   .searchInput {
-    @include m.flex(row, space-between);
+    @include m.flex(row);
     background: v.$item-bg;
     height: 45px;
-    width: 350px;
+    width: calc(100% - 200px);
     border-radius: 10px;
     transition: 0.3s;
-    .searchIcon {
-      width: 15%;
-    }
+    margin-right: 10px;
+    padding-left: 15px;
+    gap: 15px;
     input {
-      width: 85%;
+      width: calc(100% - 50px);
     }
     &:hover {
       color: v.$title-color;
@@ -28,14 +28,24 @@
     background: v.$item-bg;
     border-radius: 10px;
     gap: 15px;
-    width: 160px;
+    width: 170px;
+    min-width: 170px;
     height: 45px;
     transition: 0.3s;
+    padding: 0 10px;
     span::selection {
       background: none;
     }
     &:hover {
       color: v.$title-color;
+    }
+  }
+
+  @media (min-width: v.$large-display) {
+    padding: 0;
+    padding-right: 25px;
+    .searchInput {
+      width: 360px;
     }
   }
 }

@@ -39,16 +39,18 @@ function AsideBar() {
   return (
     <aside className={s.aside}>
       <IconContext.Provider value={{ size: "30px" }}>
-        {data?.map((category, index) => (
-          <AsideItem
-            key={category.id}
-            category={category}
-            isActive={selectedCategory == category.id}
-            handleClick={() => handleClick(category.id)}
-          >
-            {icons[index]}
-          </AsideItem>
-        ))}
+        <ul>
+          {data?.map((category, index) => (
+            <AsideItem
+              key={category.id}
+              category={category}
+              isActive={selectedCategory == category.id}
+              handleClick={() => handleClick(category.id)}
+            >
+              {icons[index]}
+            </AsideItem>
+          ))}
+        </ul>
       </IconContext.Provider>
     </aside>
   );

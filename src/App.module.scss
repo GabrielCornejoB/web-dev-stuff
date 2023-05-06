@@ -2,7 +2,7 @@
 @use "./styles//mixins" as m;
 
 .panel {
-  $spacing: 125px;
+  $spacing: 50px;
   height: calc(100vh - $spacing);
   width: calc(100vw - $spacing);
   max-width: 1300px;
@@ -13,8 +13,21 @@
 
   display: grid;
   grid-template-areas:
-    "title search"
-    "aside main";
-  grid-template-rows: 100px 1fr;
-  grid-template-columns: 300px 1fr;
+    "title"
+    "search"
+    "aside"
+    "main";
+  grid-template-rows: auto;
+  grid-template-columns: 100%;
+
+  @media (min-width: v.$large-display) {
+    $spacing: 125px;
+    height: calc(100vh - $spacing);
+    width: calc(100vw - $spacing);
+    grid-template-areas:
+      "title search"
+      "aside main";
+    grid-template-rows: 100px 1fr;
+    grid-template-columns: 300px 1fr;
+  }
 }

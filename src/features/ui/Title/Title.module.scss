@@ -15,4 +15,9 @@
       opacity: 0.5;
     }
   }
+  padding: 15px 0;
+
+  @media (min-width: v.$large-display) {
+    padding: 0;
+  }
 }

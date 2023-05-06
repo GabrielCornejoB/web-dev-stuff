@@ -42,7 +42,7 @@ function Searchbar() {
 
         <div className={s.toggleTheme} onClick={handleClick}>
           <GoPaintcan />
-          <span>Toggle Theme</span>
+          <span>Change Theme</span>
         </div>
       </IconContext.Provider>
     </div>

@@ -6,20 +6,30 @@ $scrollbar: 10px;
 
 .aside {
   grid-area: aside;
-  padding: $separation 0 0 $separation;
-  margin-bottom: $separation;
-  margin-right: calc($separation - $scrollbar);
+  padding: 0;
+  margin: 0 $separation 15px;
   ul {
-    @include m.flex(column, flex-start, flex-start);
+    @include m.flex(row, flex-start, flex-start);
   }
-  overflow-y: scroll;
+  overflow-y: auto;
   &::-webkit-scrollbar {
     width: $scrollbar;
+    height: $scrollbar;
     background-color: transparent;
     border-radius: 50px;
   }
   &::-webkit-scrollbar-thumb {
     background-color: v.$board-bg;
     border-radius: 50px;
+  }
+
+  @media (min-width: v.$large-display) {
+    margin: 0;
+    margin-bottom: $separation;
+    padding: $separation 0 0 $separation;
+    margin-right: calc($separation - $scrollbar);
+    ul {
+      @include m.flex(column, flex-start, flex-start);
+    }
   }
 }
