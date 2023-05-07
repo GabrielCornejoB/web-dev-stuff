@@ -29,7 +29,7 @@ Developed with
   <a href="#main-challenges">Main Challenges</a>
 </p>
 
-![video usandola]()
+![demo](./webdevstuff.gif)
 
 ## **Key Features**
 
@@ -50,7 +50,7 @@ Apart of that, during all of the development, I tried to use best practices foll
 
 ## **How to Use**
 
-[Visit this link]() to access Web Dev Stuff and just enjoy!
+[Visit this link](https://web-dev-stuff.vercel.app/) to access Web Dev Stuff and just enjoy!
 
 - **Left click** (normal click) on a card to open the site on a new tab.
 - **Right click** on a card to see more details about the resource.
@@ -76,7 +76,7 @@ If you want to use it locally first you should create a Supabase project and use
       $ npm run dev
 
 > **Note**
-> I suggest just using the hosted version, [visit this link]() to check it out.
+> I suggest just using the hosted version, [visit this link](https://web-dev-stuff.vercel.app/) to check it out.
 
 ## **Main Challenges**
 
